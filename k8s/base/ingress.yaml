@@ -8,14 +8,9 @@ metadata:
     tenant: opsera
     environment: dev
   annotations:
-    kubernetes.io/ingress.class: "nginx"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: nginx
 spec:
-  tls:
-  - hosts:
-    - sunny-days-ahead-dev.agent.opsera.dev
-    secretName: sunny-days-ahead-dev-tls
+  ingressClassName: nginx
   rules:
   - host: sunny-days-ahead-dev.agent.opsera.dev
     http:

@@ -5,7 +5,6 @@ namespace: opsera-sunny-days-ahead-dev
 
 resources:
   - ../../base
-  - ingress.yaml
 
 labels:
   - includeSelectors: false
