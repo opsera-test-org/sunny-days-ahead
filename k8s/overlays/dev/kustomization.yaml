@@ -19,5 +19,5 @@ replicas:
 
 images:
   - name: PLACEHOLDER_ECR_URI
-    newName: PLACEHOLDER_ECR_URI
-    newTag: latest
+    newName: 792373136340.dkr.ecr.us-west-2.amazonaws.com/opsera/sunny-days-ahead
+    newTag: e43b08a-20260217055151
