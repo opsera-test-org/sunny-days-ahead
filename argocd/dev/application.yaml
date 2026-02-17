@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sunny-days-ahead-dev
+  namespace: argocd
+  labels:
+    tenant: opsera
+    app: sunny-days-ahead
+    environment: dev
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/opsera-test-org/sunny-days-ahead.git
+    targetRevision: main
+    path: k8s/overlays/dev
+  destination:
+    name: opsera-usw2-np
+    namespace: opsera-sunny-days-ahead-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
